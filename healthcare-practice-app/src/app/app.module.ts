@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreateClaimComponent } from './create-claim/create-claim.component';
 import { ViewAccountComponent } from './view-account/view-account.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ViewAccountComponent } from './view-account/view-account.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: ClaimsComponent },
       { path: 'login', component: LoginComponent },
