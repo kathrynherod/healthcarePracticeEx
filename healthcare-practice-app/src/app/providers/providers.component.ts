@@ -1,3 +1,4 @@
+import { ProvidersService } from './../__services/providers.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./providers.component.css']
 })
 export class ProvidersComponent implements OnInit {
-
-  constructor() { }
+  constructor(private providersService: ProvidersService) {}
 
   ngOnInit() {
+    this.providersService.getProvidersList();
   }
-
 }
