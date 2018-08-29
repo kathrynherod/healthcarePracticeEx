@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
+  members: any;
   constructor(private membersService: MembersService) {}
 
   ngOnInit() {
-    this.membersService.getMembersList();
+    // this.members = this.membersService.getMembersList();
+    // console.log(this.members);
+
+    this.membersService
+      .getMembersList()
+      .subscribe(data => (this.members = data));
   }
 }
