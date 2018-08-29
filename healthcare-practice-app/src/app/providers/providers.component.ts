@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./providers.component.css']
 })
 export class ProvidersComponent implements OnInit {
+  providers: any;
   constructor(private providersService: ProvidersService) {}
 
   ngOnInit() {
-    this.providersService.getProvidersList();
+    this.providersService
+      .getProvidersList()
+      .subscribe(data => (this.providers = data));
   }
 }
